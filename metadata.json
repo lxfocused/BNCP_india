@@ -1,0 +1,6 @@
+{
+  "name": "Bharati National Commoners Party",
+  "description": "The official high-contrast bilingual portal of the Bharati National Commoners Party (BNCP), advocating for Eco-Nationalism, modern value-based education, self-reliance, and direct transparent governance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
