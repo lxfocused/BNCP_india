@@ -67,10 +67,14 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ currentLanguage,
               <div className="absolute -inset-1.5 rounded-sm border border-dashed border-[#FFCC33]/20 pointer-events-none" />
               <div className="relative h-full w-full rounded-sm overflow-hidden border border-[#FFCC33]/40 bg-[#000d26]">
                 <img
-                  src={founderSettings.portraitUrl || "/src/assets/images/RAMDAS.jpg"}
+                  src={founderSettings.portraitUrl || "/assets/ramdas.jpg"}
                   alt={currentLanguage === "hi" ? founderSettings.nameHi : founderSettings.nameEn}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "https://ui-avatars.com/api/?name=Ramdas+Rastogi&background=001540&color=FFCC33&size=256&bold=true";
+                  }}
                 />
                 
                 {/* Saffron banner overlay on portrait bottom */}
@@ -136,10 +140,14 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ currentLanguage,
               <div className="absolute -inset-1.5 rounded-sm border border-dashed border-[#FF9933]/20 pointer-events-none" />
               <div className="relative h-full w-full rounded-sm overflow-hidden border border-[#FF9933]/40 bg-[#000d26]">
                 <img
-                  src="/src/assets/images/AMIT.jpg"
+                  src="/assets/amit.jpg"
                   alt={currentLanguage === "hi" ? amitJiSettings.nameHi : amitJiSettings.nameEn}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "https://ui-avatars.com/api/?name=Amit+Ji&background=001540&color=FF9933&size=256&bold=true";
+                  }}
                 />
                 
                 {/* Saffron banner overlay on portrait bottom */}

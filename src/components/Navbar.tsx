@@ -71,6 +71,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 alt="BNCP Logo" 
                 className="h-full w-full object-cover rounded-md"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "https://ui-avatars.com/api/?name=BNCP&background=001540&color=FFCC33&size=128&bold=true";
+                }}
               />
             ) : (
               <span className="text-[#FFCC33] font-bold text-lg">BNCP</span>

@@ -212,6 +212,10 @@ export const Hero: React.FC<HeroProps> = ({ currentLanguage, setActiveSection, p
                       alt="BNCP Official Crest" 
                       className="w-full h-full object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-300"
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = "https://ui-avatars.com/api/?name=BNCP&background=001540&color=FFCC33&size=128&bold=true";
+                      }}
                     />
                   </div>
                   <div className="text-center">

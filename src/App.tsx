@@ -15,11 +15,16 @@ import { Landmark, ArrowUp, Send, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 // Image Assets paths computed from workspace generator
-const PARTY_LOGO_PATH = "/src/assets/images/party_logo_1781458278918.jpg";
-const FOUNDER_PORTRAIT_PATH = "/src/assets/images/RAMDAS.jpg";
+const PARTY_LOGO_PATH = "/assets/logo.png";
+const FOUNDER_PORTRAIT_PATH = "/assets/ramdas.jpg";
 
 export default function App() {
   const [language, setLanguage] = React.useState<Language>("hi"); // Default to Hindi as per specification guidelines
+
+  // Update browser tab title and SEO metadata dynamically
+  React.useEffect(() => {
+    document.title = "BNCP India";
+  }, []);
   const [activeSection, setActiveSection] = React.useState<Section>("home");
   const [appState, setAppState] = React.useState<AppState>(INITIAL_APP_STATE);
 
@@ -217,6 +222,10 @@ export default function App() {
                   alt="BNCP" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "https://ui-avatars.com/api/?name=BNCP&background=001540&color=FFCC33&size=128&bold=true";
+                  }}
                 />
               </div>
               <div>

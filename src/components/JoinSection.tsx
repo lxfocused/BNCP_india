@@ -446,6 +446,10 @@ export const JoinSection: React.FC<JoinSectionProps> = ({
                             alt="Logo" 
                             className="h-full w-full object-cover"
                             referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              e.currentTarget.onerror = null;
+                              e.currentTarget.src = "https://ui-avatars.com/api/?name=BNCP&background=001540&color=FFCC33&size=128&bold=true";
+                            }}
                           />
                         ) : (
                           <Award className="h-5 w-5 text-[#FFCC33]" />
