@@ -1,14 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Fira+Code:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800;900&family=Noto+Serif+Devanagari:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Fira+Code:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --font-sans: "Space Grotesk", "Noto Sans Devanagari", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif Devanagari", "Playfair Display", serif;
   --font-mono: "Fira Code", monospace;
   --color-primary-orange: #FF9933;
   --color-primary-gold: #FFCC33;
   --color-dark-navy: #000d26;
   --color-panel-blue: #001540;
+}
+
+/* Clean typography overrides for perfect Hindi rendering */
+[lang="hi"] {
+  font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+/* Reset letter-spacing / tracking and increase line-height for Hindi/Devanagari text across all contexts */
+[lang="hi"] h1,
+[lang="hi"] h2,
+[lang="hi"] h3,
+[lang="hi"] h4,
+[lang="hi"] h5,
+[lang="hi"] h6 {
+  font-family: "Noto Sans Devanagari", sans-serif !important;
+  letter-spacing: 0px !important;
+  letter-spacing: normal !important;
+  line-height: 1.45 !important;
+  padding-top: 0.15rem !important;
+  padding-bottom: 0.15rem !important;
+}
+
+[lang="hi"] p,
+[lang="hi"] span,
+[lang="hi"] button,
+[lang="hi"] a,
+[lang="hi"] label,
+[lang="hi"] li,
+[lang="hi"] font {
+  letter-spacing: 0px !important;
+  letter-spacing: normal !important;
+  line-height: 1.6 !important;
+  padding-top: 0.05rem !important;
+  padding-bottom: 0.05rem !important;
+}
+
+/* Override utility classes that would otherwise clip Hindi characters */
+[lang="hi"] .tracking-tighter,
+[lang="hi"] .tracking-tight,
+[lang="hi"] .tracking-widest,
+[lang="hi"] .tracking-wider,
+[lang="hi"] .tracking-wide {
+  letter-spacing: 0px !important;
+  letter-spacing: normal !important;
+}
+
+[lang="hi"] .leading-none,
+[lang="hi"] .leading-tight,
+[lang="hi"] .leading-snug,
+[lang="hi"] .leading-normal {
+  line-height: 1.6 !important;
+}
+
+/* Prevent clipping in flex containers or cards with rigid maximum heights */
+[lang="hi"] .overflow-hidden {
+  /* Only apply if the overflow might crop top/bottom Hindi matras */
+  overflow: visible !important;
+}
+
+/* Prevent clipping of Hindi elements using scale and translation transforms by disabling or padding them */
+[lang="hi"] .transform {
+  transform: none !important;
+}
+
+[lang="hi"] .hover\:scale-105:hover,
+[lang="hi"] .hover\:scale-\[1\.01\]:hover {
+  transform: none !important;
+}
+
+/* Ensure automatic height adjustments for cards so Hindi text never truncates */
+[lang="hi"] .h-40,
+[lang="hi"] .h-48,
+[lang="hi"] .h-[450px],
+[lang="hi"] .h-[350px],
+[lang="hi"] .h-[500px] {
+  height: auto !important;
+  min-height: max-content !important;
 }
 
 /* Custom styles for glowing details and beautiful grids under Geometric Balance theme */

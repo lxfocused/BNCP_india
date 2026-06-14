@@ -101,7 +101,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#000d26] text-white flex flex-col justify-between selection:bg-[#FF9933] selection:text-black">
+    <div lang={language} className="min-h-screen bg-[#000d26] text-white flex flex-col justify-between selection:bg-[#FF9933] selection:text-black">
       
       {/* Prime Header & Navigation Panel */}
       <Navbar
