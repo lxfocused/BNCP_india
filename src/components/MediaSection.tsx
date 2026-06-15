@@ -212,7 +212,7 @@ export const MediaSection: React.FC<MediaSectionProps> = ({ currentLanguage, new
                   <div className="absolute -inset-1 rounded-sm border border-dashed border-[#FFCC33]/20" />
                   <div className="h-full w-full rounded-sm overflow-hidden border border-[#FFCC33]/30 bg-[#001235]">
                     <img
-                      src="/assets/ramdas.jpg"
+                      src="./assets/ramdas.jpg"
                       alt={currentLanguage === "hi" ? "श्रद्धेय रामदास रस्तोगी जी" : "Shraddhey Ramdas Rastogi Ji"}
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                       referrerPolicy="no-referrer"
@@ -266,7 +266,7 @@ export const MediaSection: React.FC<MediaSectionProps> = ({ currentLanguage, new
                   <div className="absolute -inset-1 rounded-sm border border-dashed border-[#FF9933]/20" />
                   <div className="h-full w-full rounded-sm overflow-hidden border border-[#FF9933]/30 bg-[#001235]">
                     <img
-                      src="/assets/amit.jpg"
+                      src="./assets/amit.jpg"
                       alt={currentLanguage === "hi" ? "अमित जी" : "Amit Ji"}
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                       referrerPolicy="no-referrer"

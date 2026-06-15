@@ -183,21 +183,21 @@ export const Hero: React.FC<HeroProps> = ({ currentLanguage, setActiveSection, p
 
           {/* Hero Visual Block */}
           <div className="lg:col-span-5 flex justify-center items-center" id="hero-graphic-block">
-            <div className="relative w-full max-w-sm sm:max-w-md aspect-square rounded-sm border border-white/10 p-4 bg-[#001540] shadow-2xl relative">
+            <div className="relative w-full max-w-sm sm:max-w-md aspect-square rounded-sm border border-white/10 p-3 sm:p-4 bg-[#001540] shadow-2xl relative">
               {/* Corner accent decorations for strict geometric theme */}
               <div className="absolute top-0 left-0 w-3 h-[1px] bg-[#FFCC33]" />
               <div className="absolute top-0 left-0 h-3 w-[1px] bg-[#FFCC33]" />
               <div className="absolute bottom-0 right-0 w-3 h-[1px] bg-[#FFCC33]" />
               <div className="absolute bottom-0 right-0 h-3 w-[1px] bg-[#FFCC33]" />
 
-              <div className="w-full h-full rounded-sm overflow-hidden border border-[#FFCC33]/20 relative bg-[#000d26] flex flex-col justify-between p-6">
+              <div className="w-full h-full rounded-sm overflow-hidden border border-[#FFCC33]/20 relative bg-[#000d26] flex flex-col justify-between p-4 sm:p-5">
                 
                 {/* Vintage watermarked background text */}
                 <div className="absolute inset-0 opacity-5 flex items-center justify-center select-none pointer-events-none">
                   <span className="font-sans text-9xl font-bold tracking-tighter text-[#FFCC33]">BNCP</span>
                 </div>
 
-                <div className="flex justify-between items-start relative z-10">
+                <div className="flex justify-between items-center relative z-10">
                   <span className="text-[10px] uppercase font-mono tracking-widest text-[#FF9933] bg-[#FF9933]/15 px-2.5 py-1 rounded border border-[#FF9933]/30">
                     {currentLanguage === "hi" ? "प्रकृति • शिक्षा • स्वावलंबन" : "Ecology • Growth"}
                   </span>
@@ -205,21 +205,21 @@ export const Hero: React.FC<HeroProps> = ({ currentLanguage, setActiveSection, p
                 </div>
 
                 {/* Main Logo Container */}
-                <div className="my-auto flex flex-col items-center justify-center space-y-4 relative z-10 py-4">
-                  <div className="relative h-40 w-40 rounded-sm border-2 border-dashed border-[#FFCC33] p-1.5 shadow-2xl shadow-[#FFCC33]/10 bg-[#000d26]">
+                <div className="my-auto flex flex-col items-center justify-center space-y-4 relative z-10 py-2 w-full">
+                  <div className="relative w-11/12 aspect-[8/5] max-w-[260px] rounded-sm border-2 border-dashed border-[#FFCC33] p-0 shadow-[0_0_35px_rgba(255,204,51,0.2)] bg-[#000d26] hover:border-[#FF9933] hover:shadow-[0_0_45px_rgba(255,153,51,0.3)] transition-all duration-300 flex items-center justify-center group/logo-box overflow-hidden">
                     <img 
                       src={partyLogoUrl} 
                       alt="BNCP Official Crest" 
-                      className="w-full h-full object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-300"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/logo-box:scale-[1.05]"
                       referrerPolicy="no-referrer"
                       onError={(e) => {
                         e.currentTarget.onerror = null;
-                        e.currentTarget.src = "https://ui-avatars.com/api/?name=BNCP&background=001540&color=FFCC33&size=128&bold=true";
+                        e.currentTarget.src = "https://ui-avatars.com/api/?name=BNCP&background=001540&color=FFCC33&size=256&bold=true";
                       }}
                     />
                   </div>
                   <div className="text-center">
-                    <h3 className="font-sans text-xl font-bold text-white tracking-tight">
+                    <h3 className="font-sans text-lg sm:text-xl font-bold text-white tracking-tight">
                       {currentLanguage === "hi" ? "सच्ची राष्ट्र सेवा" : "True Citizen Empowerment"}
                     </h3>
                     <p className="font-sans text-xs text-slate-400 mt-1 max-w-xs mx-auto">
@@ -231,7 +231,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLanguage, setActiveSection, p
                 </div>
 
                 {/* Bottom Card indicators */}
-                <div className="flex justify-between items-center pt-4 border-t border-white/5 relative z-10 text-[10px] text-gray-400 font-mono">
+                <div className="flex justify-between items-center pt-3 border-t border-white/5 relative z-10 text-[10px] text-gray-400 font-mono">
                   <span>CENTRAL BOARD ADMIN</span>
                   <span className="text-[#FFCC33] tracking-widest">SEC_VERIFIED</span>
                 </div>

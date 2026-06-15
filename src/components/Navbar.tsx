@@ -147,6 +147,30 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#000d26] border-b border-[#FFCC33]/15 py-4 px-4 space-y-2 max-h-[80vh] overflow-y-auto">
+          {/* BNCP Mobile Menu Logo section */}
+          <div className="flex items-center space-x-3 pb-3 mb-2 border-b border-white/10">
+            <div className="h-10 w-10 overflow-hidden rounded-md border-2 border-[#FFCC33] bg-[#000d26] flex items-center justify-center flex-shrink-0">
+              <img 
+                src={partyLogoUrl} 
+                alt="BNCP Logo" 
+                className="h-full w-full object-cover"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "https://ui-avatars.com/api/?name=BNCP&background=001540&color=FFCC33&size=128&bold=true";
+                }}
+              />
+            </div>
+            <div>
+              <span className="font-sans text-xs font-bold text-white block uppercase leading-tight">
+                {currentLanguage === "hi" ? "भारतीय नेशनल COMMONERS पार्टी" : "BHARATI NATIONAL COMMONERS PARTY"}
+              </span>
+              <span className="font-mono text-[9px] text-[#FF9933] block mt-0.5 leading-none">
+                {currentLanguage === "hi" ? "भारत प्रथम • सामान्य जन शासित" : "India First • Commoner Led"}
+              </span>
+            </div>
+          </div>
+
           {navItems.map((item) => (
             <button
               key={item.id}

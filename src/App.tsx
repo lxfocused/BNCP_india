@@ -10,13 +10,13 @@ import { FounderSection } from "./components/FounderSection";
 import { MediaSection } from "./components/MediaSection";
 import { JoinSection } from "./components/JoinSection";
 import { GrievanceSection } from "./components/GrievanceSection";
-import { playSynthesizedClick } from "./utils/audio";
+import { playSynthesizedClick, initGlobalSoundSystem } from "./utils/audio";
 import { Landmark, ArrowUp, Send, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 // Image Assets paths computed from workspace generator
-const PARTY_LOGO_PATH = "/assets/logo.png";
-const FOUNDER_PORTRAIT_PATH = "/assets/ramdas.jpg";
+const PARTY_LOGO_PATH = "./assets/logo.png";
+const FOUNDER_PORTRAIT_PATH = "./assets/ramdas.jpg";
 
 export default function App() {
   const [language, setLanguage] = React.useState<Language>("hi"); // Default to Hindi as per specification guidelines
@@ -24,6 +24,7 @@ export default function App() {
   // Update browser tab title and SEO metadata dynamically
   React.useEffect(() => {
     document.title = "BNCP India";
+    initGlobalSoundSystem();
   }, []);
   const [activeSection, setActiveSection] = React.useState<Section>("home");
   const [appState, setAppState] = React.useState<AppState>(INITIAL_APP_STATE);
