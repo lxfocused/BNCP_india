@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800;900&family=Noto+Serif+Devanagari:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Fira+Code:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 @theme {
   --font-sans: "Space Grotesk", "Noto Sans Devanagari", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Noto Serif Devanagari", "Playfair Display", serif;
@@ -62,9 +82,15 @@
   line-height: 1.6 !important;
 }
 
-/* Prevent clipping in flex containers or cards with rigid maximum heights */
-[lang="hi"] .overflow-hidden {
-  /* Only apply if the overflow might crop top/bottom Hindi matras */
+/* Prevent clipping in flex containers or cards with rigid maximum heights only on actual texts */
+[lang="hi"] p, 
+[lang="hi"] span, 
+[lang="hi"] h1, 
+[lang="hi"] h2, 
+[lang="hi"] h3, 
+[lang="hi"] h4, 
+[lang="hi"] h5, 
+[lang="hi"] h6 {
   overflow: visible !important;
 }
 

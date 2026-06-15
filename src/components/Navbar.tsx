@@ -81,10 +81,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             )}
           </div>
           <div className="flex flex-col">
-            <h1 className="font-sans text-base md:text-lg font-bold tracking-tighter leading-none text-white group-hover:text-[#FFCC33] transition-colors">
+            <h1 className="font-sans text-xs min-[360px]:text-sm sm:text-base md:text-lg font-bold tracking-tighter leading-none text-white group-hover:text-[#FFCC33] transition-colors">
               {currentLanguage === "hi" ? "भारतीय नेशनल COMMONERS पार्टी" : "BHARATI NATIONAL COMMONERS PARTY"}
             </h1>
-            <p className="font-mono text-[9px] md:text-[10px] text-[#FF9933] tracking-[0.2em] uppercase font-semibold mt-1">
+            <p className="font-mono text-[8px] min-[360px]:text-[9px] md:text-[10px] text-[#FF9933] tracking-[0.1em] sm:tracking-[0.2em] uppercase font-semibold mt-1">
               {currentLanguage === "hi" ? "भारत प्रथम • सामान्य जन शासित" : "India First • Commoner Led"}
             </p>
           </div>
