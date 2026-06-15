@@ -206,17 +206,23 @@ export const Hero: React.FC<HeroProps> = ({ currentLanguage, setActiveSection, p
 
                 {/* Main Logo Container */}
                 <div className="my-auto flex flex-col items-center justify-center space-y-4 relative z-10 py-2 w-full">
-                  <div className="relative w-11/12 aspect-[8/5] max-w-[260px] rounded-sm border-2 border-dashed border-[#FFCC33] p-0 shadow-[0_0_35px_rgba(255,204,51,0.2)] bg-[#000d26] hover:border-[#FF9933] hover:shadow-[0_0_45px_rgba(255,153,51,0.3)] transition-all duration-300 flex items-center justify-center group/logo-box overflow-hidden">
-                    <img 
-                      src={partyLogoUrl} 
-                      alt="BNCP Official Crest" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover/logo-box:scale-[1.05]"
-                      referrerPolicy="no-referrer"
-                      onError={(e) => {
-                        e.currentTarget.onerror = null;
-                        e.currentTarget.src = "https://ui-avatars.com/api/?name=BNCP&background=001540&color=FFCC33&size=256&bold=true";
-                      }}
-                    />
+                  <div className="relative w-11/12 aspect-[8/5] max-w-[260px] rounded-md p-[2px] overflow-hidden shadow-[0_0_35px_rgba(255,204,51,0.25)] hover:shadow-[0_0_50px_rgba(255,153,51,0.4)] transition-all duration-300 group/logo-box flex items-center justify-center">
+                    {/* Animated Rotating Laser Border Ray */}
+                    <div className="absolute inset-[-150%] bg-[conic-gradient(from_0deg,transparent_20%,#FFCC33_40%,#FF9933_50%,#FFCC33_60%,transparent_80%)] animate-border-spin pointer-events-none" />
+                    
+                    {/* Inner Content Block tightly containing and aligning the logo */}
+                    <div className="relative w-full h-full bg-[#000d26] rounded-[4px] overflow-hidden flex items-center justify-center">
+                      <img 
+                        src={partyLogoUrl} 
+                        alt="BNCP Official Crest" 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover/logo-box:scale-[1.04]"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = "https://ui-avatars.com/api/?name=BNCP&background=001540&color=FFCC33&size=256&bold=true";
+                        }}
+                      />
+                    </div>
                   </div>
                   <div className="text-center">
                     <h3 className="font-sans text-lg sm:text-xl font-bold text-white tracking-tight">
